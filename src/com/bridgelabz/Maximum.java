@@ -27,7 +27,10 @@ public class Maximum<T extends Comparable<T>> {
     }
 
     public static void main(String[]args){
-        Integer xInt = 2, yInt = 4, zInt = 8;
+        Integer xInt = 8, yInt = 4, zInt = 2;
         new Maximum(xInt, yInt, zInt).maximum();
+
+        Float xFlt = 8.8f, yFlt = 4.4f, zFlt = 2.2f;
+        new Maximum(xFlt, yFlt, zFlt).maximum();
     }
 }
