@@ -1,39 +1,65 @@
 package com.bridgelabz;
 
-public class Maximum<T extends Comparable<T>> {
-    T x,y,z;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-    public Maximum(T x,T y,T z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+public class Maximum<T extends Comparable<T>> {
+    T a, b, c, d, e;
+    List<T> list = new ArrayList<T>();
+    public void sortList() {
+        Maximum max = new Maximum(1, 2, 3, 4, 5);
+        max.list.add(this.a);
+        max.list.add(this.b);
+        max.list.add(this.c);
+        max.list.add(this.d);
+        max.list.add(this.e);
+
+        Collections.sort(max.list);
+        System.out.println(max.list);
+    }
+
+    public Maximum(T a, T b, T c, T d, T e) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+        this.e = e;
     }
     public T maximum() {
-        return Maximum.maximum(x,y,z);
+        return Maximum.maximum(a, b, c, d, e);
     }
-    public static <T extends Comparable<T>> T maximum(T x,T y,T z) {
-        T max = x;
-        if (y.compareTo(max) > 0) {
-            max = y;
+    public static <T extends Comparable<T>> T maximum(T a, T b, T c, T d, T e) {
+        T max = a;
+        if (b.compareTo(max) > 0) {
+            max = b;
         }
-        if (z.compareTo(max) > 0) {
-            max = z;
+        if (c.compareTo(max) > 0) {
+            max = c;
         }
-        printMax(x,y,z,max);
+        if (d.compareTo(max) > 0) {
+            max = d;
+        }
+        if (e.compareTo(max) > 0) {
+            max = e;
+        }
+        printMax(a, b, c, d, e, max);
         return max;
     }
-    public static <T> void printMax(T x,T y,T z,T max) {
-        System.out.println("Max of "+x+", "+y+" and "+z+" is "+max);
+    public static <T> void printMax(T a, T b, T c, T d, T e, T max) {
+        System.out.println("Max of " + a + ", " + b + ", " + c + ", " + d + " and " + e + " is " + max);
     }
+    public static void main(String[] args) {
+        Integer aInt = 4, bInt = 2, cInt = 32, dInt = 16, eInt = 8;
+        new Maximum(aInt, bInt, cInt, dInt, eInt).maximum();
+        new Maximum(aInt, bInt, cInt, dInt, eInt).sortList();
 
-    public static void main(String[]args){
-        Integer xInt = 4, yInt = 2, zInt = 8;
-        new Maximum(xInt, yInt, zInt).maximum();
+        Float aFlt = 4.4f, bFlt = 2.2f, cFlt = 32.2f, dFlt = 16.6f, eFlt = 8.8f;
+        new Maximum(aFlt, bFlt, cFlt, dFlt, eFlt).maximum();
+        new Maximum(aFlt, bFlt, cFlt, dFlt, eFlt).sortList();
 
-        Float xFlt = 4.4f, yFlt = 2.2f, zFlt = 8.8f;
-        new Maximum(xFlt, yFlt, zFlt).maximum();
-
-        String xStr = "Apple", yStr = "Banana", zStr = "Peach";
-        new Maximum(xStr, yStr, zStr).maximum();
+        String aStr = "Apple", bStr = "Mango", cStr = "Peach", dStr = "Banana", eStr = "Grape";
+        new Maximum(aStr, bStr, cStr, dStr, eStr).maximum();
+        new Maximum(aStr, bStr, cStr, dStr, eStr).sortList();
     }
 }
