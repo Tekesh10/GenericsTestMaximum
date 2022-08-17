@@ -33,7 +33,7 @@ public class Maximum<T extends Comparable<T>> {
         Float xFlt = 4.4f, yFlt = 2.2f, zFlt = 8.8f;
         new Maximum(xFlt, yFlt, zFlt).maximum();
 
-        String xStr = "Peach", yStr = "Apple", zStr = "Banana";
+        String xStr = "Apple", yStr = "Peach", zStr = "Banana";
         new Maximum(xStr, yStr, zStr).maximum();
     }
 }
