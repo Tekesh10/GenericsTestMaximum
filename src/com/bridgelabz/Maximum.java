@@ -18,7 +18,6 @@ public class Maximum<T extends Comparable<T>> {
         Collections.sort(max.list);
         System.out.println(max.list);
     }
-
     public Maximum(T a, T b, T c, T d, T e) {
         this.a = a;
         this.b = b;
@@ -46,6 +45,23 @@ public class Maximum<T extends Comparable<T>> {
         printMax(a, b, c, d, e, max);
         return max;
     }
+    public static String testMaximum(String a, String b,String c,String d,String e) {
+        String max = a;
+        if (b.compareTo(max) > 0) {
+            max = b;
+        }
+        if (c.compareTo(max) > 0) {
+            max = c;
+        }
+        if (d.compareTo(max) > 0) {
+            max = d;
+        }
+        if (e.compareTo(max) > 0) {
+            max = e;
+        }
+        printMax(a,b,c,d,e,max);
+        return max;
+    }
     public static <T> void printMax(T a, T b, T c, T d, T e, T max) {
         System.out.println("Max of " + a + ", " + b + ", " + c + ", " + d + " and " + e + " is " + max);
     }
@@ -61,5 +77,6 @@ public class Maximum<T extends Comparable<T>> {
         String aStr = "Apple", bStr = "Mango", cStr = "Peach", dStr = "Banana", eStr = "Grape";
         new Maximum(aStr, bStr, cStr, dStr, eStr).maximum();
         new Maximum(aStr, bStr, cStr, dStr, eStr).sortList();
+        Maximum.testMaximum(aStr,bStr,cStr,dStr,eStr);
     }
 }
